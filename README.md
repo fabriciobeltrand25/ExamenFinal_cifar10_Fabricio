@@ -1,36 +1,38 @@
-# Clasificador CIFAR-10 - Examen Nube UTH · Streamlit
+# 🤖 Clasificador CIFAR-10 - Examen Nube UTH
 
-Este proyecto es una aplicación web interactiva desarrollada con **Streamlit** y **TensorFlow / Keras**, capaz de clasificar imágenes en tiempo real utilizando un modelo de Red Neuronal Convolucional (CNN) entrenado con una muestra ligera del dataset **CIFAR-10**. 
+Aplicación web interactiva desarrollada con **Streamlit** y **TensorFlow / Keras** para la clasificación de imágenes en tiempo real a partir de un subconjunto personalizado del dataset **CIFAR-10**. 
 
-Además, incorpora la **API de Groq (Llama 3.1)** para generar reportes e interpretaciones técnicas sobre la predicción realizada por el modelo de visión por computadora.
+**Desarrollado por:** Fabricio Beltrand  
+**Asignatura:** Computación en la Nube  
+**Universidad Tecnológica de Honduras (UTH)**
 
 ---
 
 ## 🚀 Características Principales
 
-* **Entrenamiento Ligero y Rápido:** CNN optimizada para ejecutarse en la nube sin requerir almacenamiento pesado.
-* **Procesamiento de 6 Clases Reales:** Identificación de Avión, Carro, Humano, Perro, Vaca y Barco.
-* **Doble Fuente de Entrada:** Permite subir archivos locales (`.jpg`, `.jpeg`, `.png`) o capturar imágenes directamente mediante la cámara del dispositivo.
-* **Integración con LLM (Groq API):** Genera informes contextuales instantáneos basados en el resultado obtenido.
-* **Métricas Integradas:** Código listo para validar matriz de confusión, reporte de clasificación y visualización aleatoria de inferencias en Google Colab.
+- **Carga Versátil:** Soporta carga de archivos (`.jpg`, `.jpeg`, `.png`) y captura directa a través de la cámara web.
+- **Inferencia en Tiempo Real:** Red Neuronal Convolucional (CNN) optimizada para ejecutarse en entornos en la nube con imágenes de $32 \times 32$ píxeles.
+- **Visualización de Probabilidades:** Gráficas interactivas y tablas de desglose con la distribución de certeza para cada una de las 6 clases evaludadas.
+- **Modelos Compatibles:** Formato moderno `.keras`.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🏷️ Clases Evaluadas
 
-* **Lenguaje:** Python 3.10+
-* **Framework Web:** Streamlit
-* **Deep Learning:** TensorFlow / Keras
-* **Procesamiento de Datos e Imágenes:** NumPy, Pandas, Pillow (PIL)
-* **Visualización de Métricas:** Matplotlib, Seaborn, Scikit-Learn
-* **LLM / Asistente IA:** OpenAI Client / Groq API (`llama-3.1-8b-instant`)
+1. **Avión** (Transporte Aéreo)
+2. **Carro** (Transporte Terrestre)
+3. **Humano** (Ser Vivo / Persona)
+4. **Perro** (Ser Vivo / Mamífero Doméstico)
+5. **Vaca** (Ser Vivo / Mamífero de Granja)
+6. **Barco** (Transporte Marítimo)
 
 ---
 
-## 📁 Estructura del Repositorio
+## 🛠️ Requisitos e Instalación Local
 
-```text
-├── app.py                   # Código principal de la interfaz en Streamlit
-├── modelo_examen.keras      # Modelo CNN entrenado guardado
-├── requirements.txt         # Dependencias del proyecto para Streamlit Cloud
-└── README.md                # Documentación del repositorio
+Para ejecutar esta aplicación de manera local, asegúrate de tener instalado Python 3.9+ y los siguientes paquetes:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/TU_USUARIO/TU_REPOSITORIO.git)
+   cd TU_REPOSITORIO
