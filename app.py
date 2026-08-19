@@ -9,7 +9,7 @@ from PIL import Image
 # CONFIGURACIÓN DE LA PÁGINA
 # ----------------------------------------------------
 st.set_page_config(
-    page_title="Clasificador CIFAR-10 - Examen Nube UTH",
+    page_title="Clasificador CIFAR-10 - EXAMEN--UTH 2026 - Fabricio Beltrand",
     page_icon="🤖",
     layout="wide"
 )
