@@ -6,7 +6,9 @@ import tensorflow as tf
 from PIL import Image
 from openai import OpenAI
 
-# Configuración principal de la página
+# ----------------------------------------------------
+# CONFIGURACIÓN DE LA PÁGINA
+# ----------------------------------------------------
 st.set_page_config(
     page_title="Clasificador CIFAR-10 - Examen Nube UTH",
     page_icon="🤖",
@@ -14,7 +16,7 @@ st.set_page_config(
 )
 
 # ----------------------------------------------------
-# CARGA DE MODELO Y CONFIGURACIÓN
+# CARGA DEL MODELO Y CONFIGURACIÓN
 # ----------------------------------------------------
 MODEL_PATH = "modelo_examen.keras"
 CLASES = ["Avión", "Carro", "Humano", "Perro", "Vaca", "Barco"]
@@ -25,7 +27,7 @@ def cargar_modelo():
     if os.path.exists(MODEL_PATH):
         return tf.keras.models.load_model(MODEL_PATH)
     else:
-        st.error(f"No se encontró el modelo `{MODEL_PATH}` en el directorio principal.")
+        st.error(f"No se encontró el archivo del modelo `{MODEL_PATH}` en el directorio principal.")
         return None
 
 modelo = cargar_modelo()
@@ -121,7 +123,7 @@ with col_der:
                     )
 
                     respuesta = client.chat.completions.create(
-                        model="llama-3.1-8b-instant",
+                        model="llama-3.3-70b-versatile",
                         messages=[
                             {"role": "system", "content": "Eres un asistente de inteligencia artificial y visión por computadora."},
                             {"role": "user", "content": prompt}
