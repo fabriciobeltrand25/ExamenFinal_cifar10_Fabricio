@@ -50,20 +50,20 @@ col_izq, col_der = st.columns([1, 1])
 
 with col_izq:
     st.subheader("1. Captura o Carga de Imagen")
-    metodo = st.radio("Fuente de la imagen:", ["Subir archivo", "Usar cámara"], horizontal=True)
+    metodo = st.radio("Fuente de la imagen:", ["Subir archivo", "Usar cámara"], horizontal=True, key="fuente_img")
     
     imagen_pil = None
     if metodo == "Subir archivo":
-        archivo = st.file_uploader("Seleccione una imagen...", type=["jpg", "jpeg", "png"])
+        archivo = st.file_uploader("Seleccione una imagen...", type=["jpg", "jpeg", "png"], key="uploader_file")
         if archivo:
             imagen_pil = Image.open(archivo)
     else:
-        foto = st.camera_input("Tome una fotografía")
+        foto = st.camera_input("Tome una fotografía", key="camera_input")
         if foto:
             imagen_pil = Image.open(foto)
 
     if imagen_pil:
-        st.image(imagen_pil, caption="Imagen seleccionada", use_column_width=True)
+        st.image(imagen_pil, caption="Imagen seleccionada", use_container_width=True)
 
 with col_der:
     st.subheader("2. Diagnóstico y Análisis del Modelo")
@@ -72,7 +72,7 @@ with col_der:
         # Preprocesamiento de la imagen para el modelo (32x32 RGB)
         img_rgb = imagen_pil.convert("RGB")
         img_resized = img_rgb.resize(IMG_SIZE)
-        img_array = np.array(img_resized) / 255.0
+        img_array = np.array(img_resized).astype(np.float32) / 255.0
         img_batch = np.expand_dims(img_array, axis=0)
 
         # Predicción del modelo de red neuronal
