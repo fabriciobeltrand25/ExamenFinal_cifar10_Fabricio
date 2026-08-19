@@ -44,7 +44,7 @@ INFO_OBJETOS = {
 # ----------------------------------------------------
 # INTERFAZ GRÁFICA DE USUARIO
 # ----------------------------------------------------
-st.title("🤖 Clasificador de Objetos e Imágenes - CIFAR-10")
+st.title("🤖 Clasificador de Objetos e Imágenes - CIFAR-10- EXAMEN--UTH 2026 - Fabricio Beltrand")
 st.caption("Examen de Computación en la Nube | Desarrollado por: **Fabricio Beltrand**")
 
 col_izq, col_der = st.columns([1, 1])
